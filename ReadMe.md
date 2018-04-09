@@ -24,12 +24,11 @@ queries = queries.values
 
 Loop thru each query and split each data 
 
-words
-Tables |
----- |
-喝水 |
-or |
-唱歌 |
+| Words    |
+| -------- |
+| 喝水      |
+| OR       |
+| 玩水      |
 
 ```python
 for query in queries:
