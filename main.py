@@ -1,5 +1,4 @@
 import pandas as pd
-import time
 
 if __name__ == '__main__':
     # You should not modify this part.
@@ -19,13 +18,10 @@ if __name__ == '__main__':
 
 
     # Please implement your algorithm below
-    start_time = time.time()
     outputs = []
-    
-    # TODO load source data, build search engine
+
     data = pd.read_csv(args.source, names=["index", "data"])
     data = data.values
-    # TODO compute query result
     queries = pd.read_csv(args.query, names=["query"])
     queries = queries.values
     for query in queries:
@@ -63,11 +59,9 @@ if __name__ == '__main__':
         if not tempArr:
             tempArr = list([0])
         outputs.append(tempArr)
-    # TODO output result
     file = open(args.output, 'w')
     for output in outputs[:-1]:
         file.write(','.join(map(str, output)))
         file.write('\n')
     else:
         file.write(','.join(map(str, outputs[-1])))
-    print("--- %s seconds ---" % (time.time() - start_time))
